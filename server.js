@@ -15,9 +15,11 @@ app.get('/', (req, res)=>{
 
 app.post('/api/fileanalysis', multer().single('upfile'), (req, res)=>{
     
-    console.log(req.file)
+    const originalName = req.file.originalname
+    const mimetype = req.file.mimetype
+    const size = req.file.size
 
-    res.json({})
+    res.json({name: originalName, type: mimetype, size:size })
 })
 
 app.listen(3000, (req, res) =>{
