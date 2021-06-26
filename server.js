@@ -10,7 +10,7 @@ app.use(cors())
 
 
 app.get('/', (req, res)=>{
-    res.sendFile('index.html')
+    res.sendFile(__dirname + '/index.html')
 })
 
 app.post('/api/fileanalysis', multer().single('upfile'), (req, res)=>{
